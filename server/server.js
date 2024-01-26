@@ -29,16 +29,10 @@ app.use('/graphql', expressMiddleware(server, {
   context: authMiddleware
 }));
 
-// if we're in production, serve client/build as static assets
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../client/build')));
-}
+
 // Comment out this code once you have built out queries and mutations in the client folder
-app.use(routes);
+// app.use(routes);
   
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build/index.html"));
-})
 
 db.once('open', () => {
   app.listen(PORT, () => {
