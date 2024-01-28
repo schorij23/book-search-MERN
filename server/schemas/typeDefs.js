@@ -29,7 +29,7 @@ const typeDefs = gql`
         description: String
         bookId: String
         title: String
-        Image: String
+        image: String
         link: String
     }
     type Mutation {
