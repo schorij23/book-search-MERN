@@ -30,9 +30,11 @@ const resolvers = {
                 throw AuthenticationError('Incorect Password Entered')
             }
             const token = signToken(user);
+            console.log(token);
             return { token, user };
         },
         saveBook: async (parent, { book }, context) => {
+            console.log(book, context.user);
             if (context.user) {
                 const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
