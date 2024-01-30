@@ -60,8 +60,9 @@ const SavedBooks = () => {
         variables: { bookId },
       });
       // const response = await deleteBook(bookId, token);
-      if (data.removeBook) {
+      if (data) {
         removeBookId(bookId);
+        location.reload()
       }
       // if (!response.ok) {
       //   throw new Error('something went wrong!');

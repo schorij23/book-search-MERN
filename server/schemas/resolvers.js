@@ -35,13 +35,14 @@ const resolvers = {
             return { token, user };
         },
         saveBook: async (parent, { book }, context) => {
-            console.log(book, context.user);
+            console.log(book,"---- SaveBook ----", context.user);
             if (context.user) {
                 const updatedUser = await User.findOneAndUpdate(
                     { _id: context.user._id },
                     { $addToSet: {savedBooks: book} },
                     { new: true }
                 );
+                console.log(updatedUser)
                 return updatedUser;
             }
             throw new Error ('You are not logged in')
