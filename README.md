@@ -12,7 +12,6 @@ This project uses the MERN stack of MongoDB, Express, React and Node.js for a bo
 * [Usage](#usage)
 * [License](#license)
 * [Questions](#questions)
-* [Walkthrough](#walkthrough)
 * [Screenshots](#screenshots)
 
 
@@ -44,6 +43,8 @@ For more details, see [License Details](https://choosealicense.com/licenses/mit/
   - Email address schorij23@gmail.com
 
 ## Screenshots
+![MERN Search Books](./client/src/assets/GoogleBooksMernSearch.png)
+![MERN Saved Books](./client/src/assets/GoogleBooksMernSaved.png)
+
 Render Deployment link [Jeff S Text Editor](https://jeffs-text-editor-pwa.onrender.com/)
 
-![Heroku Opening Screen](./assets/J.A.T.E.png)

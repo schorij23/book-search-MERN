@@ -15,7 +15,6 @@ module.exports = {
     // allows token to be sent via  req.query or headers
     let token = req.query.token || req.headers.authorization;
 
-    // ["Bearer", "<tokenvalue>"]
     if (req.headers.authorization) {
       token = token.split(' ').pop().trim();
     }
@@ -30,11 +29,8 @@ module.exports = {
       req.user = data;
     } catch {
       console.log('Invalid token');
-      // return res.status(400).json({ message: 'invalid token!' });
     }
     return req;
-    // send to next endpoint
-    // next();
   },
   signToken: function ({ username, email, _id }) {
     const payload = { username, email, _id };
