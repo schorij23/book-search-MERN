@@ -81,7 +81,8 @@ const SearchBooks = () => {
       // const response = await saveBook(bookToSave, token);
       console.log(data);
       // if (data.saveBook) {
-        setSavedBookIds([...saveBookIds, bookToSave.bookId])
+        console.log(saveBookIds)
+        setSavedBookIds([...getSavedBookIds(), bookToSave.bookIds])
       // }
       // if (!response.ok) {
       //   throw new Error('something went wrong!');

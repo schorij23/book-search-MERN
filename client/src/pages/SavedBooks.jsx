@@ -15,7 +15,7 @@ import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
-  const [ loading, data] = useQuery(GET_ME);
+  const {loading, data} = useQuery(GET_ME);
   const userData = data?.me || {};
 
   const [removeBook] = useMutation(REMOVE_BOOK);
@@ -83,7 +83,7 @@ const SavedBooks = () => {
 
   return (
     <>
-      <div fluid className="text-light bg-dark p-5">
+      <div className="text-light bg-dark p-5">
         <Container>
           <h1>Viewing saved books!</h1>
         </Container>
