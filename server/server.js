@@ -20,22 +20,25 @@ const app = express();
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async () => {
   await server.start();
-  
+
+  // Middleware for parsing request bodies
   app.use(express.urlencoded({ extended: false }));
   app.use(express.json());
-  
+
+  // Middleware for GraphQL using Apollo Server
   app.use('/graphql', expressMiddleware(server, {
     context: authMiddleware
   }));
-
+  // Serve static files in production
   if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.join(__dirname, '../client/dist')));
 
+    // Route for all other requests in production
     app.get('*', (req, res) => {
       res.sendFile(path.join(__dirname, '../client/dist/index.html'));
     });
   }
-
+  // Open the database connection and start the server
   db.once('open', () => {
     app.listen(PORT, () => {
       console.log(`API server running on port ${PORT}!`);
