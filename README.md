@@ -46,5 +46,5 @@ For more details, see [License Details](https://choosealicense.com/licenses/mit/
 ![MERN Search Books](./client/src/assets/GoogleBooksMernSearch.png)
 ![MERN Saved Books](./client/src/assets/GoogleBooksMernSaved.png)
 
-Render Deployment link [Jeff S Text Editor](https://jeffs-text-editor-pwa.onrender.com/)
+Heroku Deployment link [Jeff-book](https://jeff-book-74977743fbf1.herokuapp.com/)
 
